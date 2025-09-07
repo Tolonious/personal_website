@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 import Link from 'next/link'
-import { BarChart3, Database, TrendingUp, Code, ArrowRight, Users, Award } from 'lucide-react'
+import { BarChart3, Database, TrendingUp, Code, ArrowRight, Users, Award, Mail, Linkedin } from 'lucide-react'
 
 export default function Home() {
   return (
