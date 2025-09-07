@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X, BarChart3, Database } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -16,7 +17,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">
               Home
             </Link>
@@ -29,15 +30,18 @@ export default function Header() {
             <Link href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition-colors">
               Contact
             </Link>
+            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex items-center space-x-4 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
